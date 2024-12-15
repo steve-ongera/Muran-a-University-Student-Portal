@@ -1,0 +1,825 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Abno">
+    <meta name="keyword" content="">
+    <title>Murang&#x27;a University Of Technology</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'mulogo.png'%}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="{%static 'bs5-intro-tour.js'%}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <link rel="stylesheet" href="{% static 'Settings.css' %}" />
+    <link  rel="stylesheet" href="{% static  'main.css' %}"  />
+    <link rel="stylesheet" href="{% static 'site.css' %}" />
+    <link rel="stylesheet" href="{% static 'customstepper.css' %}" />
+   
+    <color theme="#66c743" tab="#1d2aed" secondary="#9d0101" hidden></color>
+    <script src="{% static 'color.js'%}"> </script>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader">
+
+<svg version="1.1" 
+	class="svg-loader" 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	x="0px"
+	y="0px" 
+	viewBox="0 0 80 80" 
+	xml:space="preserve"
+>
+	<path 
+		fill="#23366E" 
+		d="M10,40c0,0,0-0.4,0-1.1c0-0.3,0-0.8,0-1.3c0-0.3,0-0.5,0-0.8c0-0.3,0.1-0.6,0.1-0.9c0.1-0.6,0.1-1.4,0.2-2.1
+		c0.2-0.8,0.3-1.6,0.5-2.5c0.2-0.9,0.6-1.8,0.8-2.8c0.3-1,0.8-1.9,1.2-3c0.5-1,1.1-2,1.7-3.1c0.7-1,1.4-2.1,2.2-3.1
+		c1.6-2.1,3.7-3.9,6-5.6c2.3-1.7,5-3,7.9-4.1c0.7-0.2,1.5-0.4,2.2-0.7c0.7-0.3,1.5-0.3,2.3-0.5c0.8-0.2,1.5-0.3,2.3-0.4l1.2-0.1
+		l0.6-0.1l0.3,0l0.1,0l0.1,0l0,0c0.1,0-0.1,0,0.1,0c1.5,0,2.9-0.1,4.5,0.2c0.8,0.1,1.6,0.1,2.4,0.3c0.8,0.2,1.5,0.3,2.3,0.5
+		c3,0.8,5.9,2,8.5,3.6c2.6,1.6,4.9,3.4,6.8,5.4c1,1,1.8,2.1,2.7,3.1c0.8,1.1,1.5,2.1,2.1,3.2c0.6,1.1,1.2,2.1,1.6,3.1
+		c0.4,1,0.9,2,1.2,3c0.3,1,0.6,1.9,0.8,2.7c0.2,0.9,0.3,1.6,0.5,2.4c0.1,0.4,0.1,0.7,0.2,1c0,0.3,0.1,0.6,0.1,0.9
+		c0.1,0.6,0.1,1,0.1,1.4C74,39.6,74,40,74,40c0.2,2.2-1.5,4.1-3.7,4.3s-4.1-1.5-4.3-3.7c0-0.1,0-0.2,0-0.3l0-0.4c0,0,0-0.3,0-0.9
+		c0-0.3,0-0.7,0-1.1c0-0.2,0-0.5,0-0.7c0-0.2-0.1-0.5-0.1-0.8c-0.1-0.6-0.1-1.2-0.2-1.9c-0.1-0.7-0.3-1.4-0.4-2.2
+		c-0.2-0.8-0.5-1.6-0.7-2.4c-0.3-0.8-0.7-1.7-1.1-2.6c-0.5-0.9-0.9-1.8-1.5-2.7c-0.6-0.9-1.2-1.8-1.9-2.7c-1.4-1.8-3.2-3.4-5.2-4.9
+		c-2-1.5-4.4-2.7-6.9-3.6c-0.6-0.2-1.3-0.4-1.9-0.6c-0.7-0.2-1.3-0.3-1.9-0.4c-1.2-0.3-2.8-0.4-4.2-0.5l-2,0c-0.7,0-1.4,0.1-2.1,0.1
+		c-0.7,0.1-1.4,0.1-2,0.3c-0.7,0.1-1.3,0.3-2,0.4c-2.6,0.7-5.2,1.7-7.5,3.1c-2.2,1.4-4.3,2.9-6,4.7c-0.9,0.8-1.6,1.8-2.4,2.7
+		c-0.7,0.9-1.3,1.9-1.9,2.8c-0.5,1-1,1.9-1.4,2.8c-0.4,0.9-0.8,1.8-1,2.6c-0.3,0.9-0.5,1.6-0.7,2.4c-0.2,0.7-0.3,1.4-0.4,2.1
+		c-0.1,0.3-0.1,0.6-0.2,0.9c0,0.3-0.1,0.6-0.1,0.8c0,0.5-0.1,0.9-0.1,1.3C10,39.6,10,40,10,40z"
+	>
+		
+	</path>
+	<path 
+		fill="#ED1E24" 
+		d="M62,40.1c0,0,0,0.2-0.1,0.7c0,0.2,0,0.5-0.1,0.8c0,0.2,0,0.3,0,0.5c0,0.2-0.1,0.4-0.1,0.7
+		c-0.1,0.5-0.2,1-0.3,1.6c-0.2,0.5-0.3,1.1-0.5,1.8c-0.2,0.6-0.5,1.3-0.7,1.9c-0.3,0.7-0.7,1.3-1,2.1c-0.4,0.7-0.9,1.4-1.4,2.1
+		c-0.5,0.7-1.1,1.4-1.7,2c-1.2,1.3-2.7,2.5-4.4,3.6c-1.7,1-3.6,1.8-5.5,2.4c-2,0.5-4,0.7-6.2,0.7c-1.9-0.1-4.1-0.4-6-1.1
+		c-1.9-0.7-3.7-1.5-5.2-2.6c-1.5-1.1-2.9-2.3-4-3.7c-0.6-0.6-1-1.4-1.5-2c-0.4-0.7-0.8-1.4-1.2-2c-0.3-0.7-0.6-1.3-0.8-2
+		c-0.2-0.6-0.4-1.2-0.6-1.8c-0.1-0.6-0.3-1.1-0.4-1.6c-0.1-0.5-0.1-1-0.2-1.4c-0.1-0.9-0.1-1.5-0.1-2c0-0.5,0-0.7,0-0.7
+		s0,0.2,0.1,0.7c0.1,0.5,0,1.1,0.2,2c0.1,0.4,0.2,0.9,0.3,1.4c0.1,0.5,0.3,1,0.5,1.6c0.2,0.6,0.4,1.1,0.7,1.8
+		c0.3,0.6,0.6,1.2,0.9,1.9c0.4,0.6,0.8,1.3,1.2,1.9c0.5,0.6,1,1.3,1.6,1.8c1.1,1.2,2.5,2.3,4,3.2c1.5,0.9,3.2,1.6,5,2.1
+		c1.8,0.5,3.6,0.6,5.6,0.6c1.8-0.1,3.7-0.4,5.4-1c1.7-0.6,3.3-1.4,4.7-2.4c1.4-1,2.6-2.1,3.6-3.3c0.5-0.6,0.9-1.2,1.3-1.8
+		c0.4-0.6,0.7-1.2,1-1.8c0.3-0.6,0.6-1.2,0.8-1.8c0.2-0.6,0.4-1.1,0.5-1.7c0.1-0.5,0.2-1,0.3-1.5c0.1-0.4,0.1-0.8,0.1-1.2
+		c0-0.2,0-0.4,0.1-0.5c0-0.2,0-0.4,0-0.5c0-0.3,0-0.6,0-0.8c0-0.5,0-0.7,0-0.7c0-1.1,0.9-2,2-2s2,0.9,2,2C62,40,62,40.1,62,40.1z"
+	>
+	</path>
+</svg>
+</div>
+    <!-- Top Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border shadow-sm">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img class="navbar-brand" src="{% static 'mulogo.png'%}" />
+                    <i class="ri-menu-fill menu-top primary-text top" id="menuToggle"></i>
+                </div>
+            </div>
+            <div class="mb-lg-0 text-center ms-2 my-1 institutionbrand">
+                    <h4 class="d-flex justify-content-start primary-text fw-bold">Murang&#x27;a University Of Technology</h4>
+            </div>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown notification">
+                    <a class="nav-link dropdown-toggle primary-text notifyIcon" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ri-notification-3-line top" data-bs-toggle="tooltip" data-bs-placement="right"
+                           data-bs-custom-class="custom-tooltip" data-bs-title="Notifications"></i>
+                        <div class="text-white text-center"><span>0</span></div>
+                    </a>
+                    <ul class="dropdown-menu notify shadow" aria-labelledby="navbarDropdown">
+                        <li><h6 class="primary-text ms-3">Notification</h6></li>
+                            <li class="border-bottom py-1">
+                                No notifications
+                            </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown border-start">
+                    <a class="nav-link dropdown-toggle primary-text profile" href="#" id="navbarProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'avatar2.png'%}"  /> <span class="ms-2 salutation" id="salutation">Hi,{{request.user}} </span>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'profile'%}"><i class="ri-user-line"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'signin'%}"><i class="ri-logout-circle-r-line"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--  -->
+    <!-- Sidenav -->
+    <nav class="sidenav">
+        <ul class="menu">
+            <li class="menu-link active" id="dashboard">
+                <a class="menu_sub" href="{% url 'dashboard'%}"> <i class="ri-dashboard-line"></i> <span>Dashboard</span></a>
+            </li>
+                <li class="menu-link" id="socials">
+                    <a href="javascript:void(0);" class="menu_sub">
+                        <i class="ri-global-line"></i>
+                        <span>Socials</span>
+                        <i class="dropdown-caret ri-arrow-right-s-line"></i>
+                    </a>
+                    <ul>
+                        <li class="sub-item">
+                            <a id="news" href="{% url 'dashboard'%}">News</a>
+                        </li>
+
+                        <li class="sub-item">
+                            <a id="events" href="{% url 'dashboard'%}"> Events </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <li class="menu-link messDiv" id="message">
+                    <a class="menu_sub" href="{% url 'dashboard'%}">
+                        <i class="ri-message-2-line"></i>
+                        <span>Message</span>
+                    </a>
+                </li>
+
+
+
+                <li class="menu-link" id="admission">
+                    <a href="javascript:void(0);" class="menu_sub">
+                        <i class="ri-government-fill"></i>
+                        <span>Admission</span>
+                        <i class="dropdown-caret ri-arrow-right-s-line"></i>
+                    </a>
+                    <ul>
+                            <li class="sub-item">
+                                <a id="reporting" href="{% url 'dashboard'%}">Reporting</a>
+                            </li>
+                            <li class="sub-item">
+                                <a id="hostelbooking" href="{% url 'dashboard'%}">Hostel Booking</a>
+                            </li>
+                            <li class="sub-item">
+                                <a id="clearance" href="{% url 'dashboard'%}">Clearance</a>
+                            </li>
+                            <li class="sub-item">
+                                <a id="academicDeferment" href="{% url 'dashboard'%}">Deferment</a>
+                            </li>
+                    </ul>
+                </li>
+
+                <li class="menu-link" id="academic">
+                    <a href="javascript:void(0);" class="menu_sub">
+                        <i class="ri-book-open-line"></i>
+                        <span>Academic</span>
+                        <i class="dropdown-caret ri-arrow-right-s-line"></i>
+                    </a>
+                    <ul>
+                            <li class="sub-item">
+                                <a id="academicSchedule" href="{% url 'dashboard'%}">Units/Curriculum</a>
+                            </li>
+                                <li class="sub-item">
+                                    <a id="academicExamCard" href="{% url 'dashboard'%}">Examcard </a>
+                                </li>
+                                    <li class="sub-item">
+                                        <a id="academicSpecial" href="{% url 'dashboard'%}">Special Exams</a>
+                                    </li>
+                                    <li class="sub-item">
+                                        <a id="academicSupplementary" href="{% url 'dashboard'%}">Supplementary Exams</a>
+                                    </li>
+                            <li class="sub-item">
+                                <a id="academicReports" href="{% url 'dashboard'%}">
+                                        <span>ResultSlip/Transcript</span>
+                                </a>
+                            </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-link" id="repository">
+                    <a class="menu_sub" href="{% url 'dashboard'%}">
+                        <i class="ri-folder-open-line"></i>
+                        <span>Repository</span>
+                    </a>
+                </li>
+                <li class="menu-link" id="financials">
+                    <a class="menu_sub" href="javascript:void(0);">
+                        <i class="ri-bank-line"></i>
+                        <span>Financials</span>
+                        <i class="dropdown-caret ri-arrow-right-s-line"></i>
+                    </a>
+                    <ul>
+                            <li class="sub-item">
+                                <a id="imprest" href="/financials/Financials">Fees</a>
+                            </li>
+                    </ul>
+                </li>
+                <li class="menu-link" id="timetable">
+                    <a class="menu_sub" href="/Timetable">
+                        <i class="ri-calendar-line"></i>
+                        <span>Timetable</span>
+                    </a>
+                </li>
+                <li class="menu-link" id="evaluation">
+                    <a href="javascript:void(0);" class="menu_sub">
+                        <i class="ri-question-fill"></i>
+                        <span>Evaluations</span>
+                        <i class="dropdown-caret ri-arrow-right-s-line"></i>
+                    </a>
+                    <ul>
+                            <li class="sub-item">
+                                <a id="Levaluation" href="/Evaluation/Evaluation">Course Evaluation</a>
+                            </li>
+                    </ul>
+                </li>
+                <li class="menu-link" id="complaints">
+                    <a class="menu_sub" href="{% url 'dashboard'%}">
+                        <i class="ri-feedback-line"></i>
+                        <span>Complaints</span>
+                    </a>
+                </li>
+            <li class="menu-link" id="faqs">
+                <a class="menu_sub" href="/FAQs">
+                    <i class="ri-question-line"></i>
+                    <span>FAQs</span>
+                </a>
+            </li>
+            <li class="menu-link" id="virtual">
+                <a class="menu_sub" href="{% url 'dashboard'%}">
+                    <i class="ri-customer-service-fill"></i>
+                    <span>Virtual Assistant</span>
+                </a>
+            </li>
+
+        </ul>
+        <div class="brand-footer">
+            <span>©2024 - InnovationHub Softwares</span>
+        </div>
+    </nav>
+    <!-- #end sidenav  -->
+
+    <main role="main" class="pb-3">
+        <div class="container onprintContainer">
+            
+<!--header-->
+<div class="row mt-3 d-flex flex-row pb-3">
+    <div class="col-md-12 d-flex justify-content-between">
+        <h3 class="primary-text">Profile Settings</h3>
+
+    </div>
+</div>
+<div class="row bg-white shadow">
+    <div class="col-md-3">
+        <!-- Tab navs -->
+        <div class="nav flex-column nav-tabs text-center"id="v-tabs-tab"role="tablist"aria-orientation="vertical">
+            <div class="card col-md-12">
+                <div class="card-body text-md-left ml-0">
+                    <div class="nav flex-column nav-tabs prof" id="v-tabs-tab" role="tablist" aria-orientation="vertical">
+                        <div class="mb-4 d-flex align-items-center flex-column">
+                            <div class="profile-pic mb-3 position-relative ">
+                                    <img src="{% static 'avatar2.png'%}" id="profilePicture" class="img-fluid rounded-circle" alt="..." />
+                                <span class="position-absolute bottom-0 start-100 translate-middle badge border border-blue rounded-circle uploadIcon bg-white">
+                                    <span class="elementinput">
+                                        <i class="ri-upload-line profIconClick" data-bs-toggle="tooltip" data-bs-placement="right"
+                                           data-bs-custom-class="custom-tooltip"data-bs-title="Upload Profile Picture"></i>
+                                        <input class="profileInputFile" type="file" id="uploadedProf" accept="image/png, image/gif, image/jpeg, image/jpg">
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="sticky-top mb-2">
+                                <div class="p-1">
+                                    <button type="button" class="btn primary-outline-btn btn-md profileInputFile" id="profileUpload"><i class="ri-upload-line"></i>Upload</button>
+                                </div>
+                                <div>
+                                    <h6 class="mb-2">
+                                        {{request.user}} 
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav flex-column prof">
+
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active px-1" href="#" id="Stud-PersonalDetails-tab" data-bs-toggle="tab" data-bs-target="#Stud-PersonalDetails" role="tab" aria-controls="Stud-PersonalDetails" aria-selected="true"><i class="bi bi-person mx-3"></i><span>Personal Details</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link px-0" id="Stud-ContactDetails-tab" data-bs-toggle="tab" data-bs-target="#Stud-ContactDetails" role="tab" aria-controls="Stud-ContactDetails" aria-selected="false"><i class="bi bi-telephone mx-3"></i><span>Contacts Details</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link px-0" id="Stud-Em-ContactDetails-tab" data-bs-toggle="tab" data-bs-target="#Stud-Em-ContactDetails" role="tab" aria-controls="Stud-Em-ContactDetails" aria-selected="false"><i class="bi bi-telephone mx-1"></i><span>Emergency Contact</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link px-0" id="Academics-tab" data-bs-toggle="tab" data-bs-target="#Academics" role="tab" aria-controls="Academics" aria-selected="false"> <i class="bi bi-file-earmark-text-fill mx-1"></i><span>Academic Details</span></a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link px-0" id="Password-tab" data-bs-toggle="tab" data-bs-target="#Password" role="tab" aria-controls="Password" aria-selected="false"><i class="bi bi-lock-fill mx-1"></i><span>Change Password</span></a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tab navs -->
+    </div>
+
+    <div class="col-md-9 profile">
+        <!-- Tab content -->
+        <div class="tab-content ">
+                <div id="Stud-PersonalDetails" class="container tab-pane show active" role="tabpanel" aria-labelledby="Stud-PersonalDetails-tab">
+                    <form method="post" action="/Home/EditStudentProfile?editOperation=EditOthers">
+                        <input hidden type="text" id="StudentProfileData_Register_Telno" name="StudentProfileData.Register.Telno" value="112284093" />
+                        <input hidden type="text" id="StudentProfileData_Register_Email" name="StudentProfileData.Register.Email" value="gadafisteve001@gmail.com" />
+                        <input hidden type="text" id="StudentProfileData_Register_Homeaddress" name="StudentProfileData.Register.Homeaddress" value="P.O. BOX 00,Mombasa 80100" />
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Registration Number</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_AdmnNo" name="StudentProfileData.Register.AdmnNo" value="{{ student.registration_number }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Name</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Names" name="StudentProfileData.Register.Names" value="{{ student.name }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Programme</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Programme" name="StudentProfileData.Register.Programme" value=" {{ student.programme }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>National Id</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_NationalId" name="StudentProfileData.Register.NationalId" value="{{ student.national_id }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Date of Birth </label><br>
+                                    <input type="date" class="form-control" disabled id="StudentProfileData_Register_Dob" name="StudentProfileData.Register.Dob" value="xxxxxx">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Gender</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Gender" name="StudentProfileData.Register.Gender" value="xxxxx">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Marital Status</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Marital" name="StudentProfileData.Register.Marital" value="Single">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Nationality</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Nationality" name="StudentProfileData.Register.Nationality" value="{{ student.nationality }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Religion</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Religion" name="StudentProfileData.Register.Religion" value="{{ student.religion }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Source</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Source" name="StudentProfileData.Register.Source" value="{{ student.source }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Disability</label><br>
+                                    <input type="text" class="form-control" disabled id="StudentProfileData_Register_Disability" name="StudentProfileData.Register.Disability" value="{{ student.disability }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Language</label><br>
+                                    <input type="text" class="form-control" id="StudentProfileData_Register_Language" name="StudentProfileData.Register.Language" value="{{ student.language }} ">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Medical</label><br>
+                                    <input type="text" class="form-control" id="StudentProfileData_Register_Special" name="StudentProfileData.Register.Special" value=" {{ student.medical }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="md-form mb-3">
+                                    <label>Co-Curricular</label><br>
+                                    <input type="text" class="form-control" id="StudentProfileData_Register_Activity" name="StudentProfileData.Register.Activity" value="{{ student.co_curricular }} ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-2 d-flex justify-content mt-3">
+                            <button type="submit" class="btn primary-btn btn-md light">Update</button>
+                        </div>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AjNkxAgz6tElXQYWS_mbdyaZt9GMjta4N8JeoriXzoP5x4gCkumI0pUGNe7imoBSRdZZpqNXgbhv19ezQ1B9ieefGAAI2imUDgI_LkA-rJXIyNTUsMKfGJk7YncZnJ23xuBDya6635kHGMNmxvacEViFRAp-Nl53LCLpFElAcSpfr9bn4QES6iMqk-2jE_Xgw" /></form>
+                </div>
+            <div id="Stud-ContactDetails" class="container tab-pane fade" role="tabpanel" aria-labelledby="Stud-ContactDetails-tab">
+                <form method="post" action="/Home/EditStudentProfile?editOperation=EditContacts">
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Telephone number</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Telno" name="StudentProfileData.Register.Telno" value="112284093">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Email</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Email" name="StudentProfileData.Register.Email" value="gadafisteve001@gmail.com">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Home Address</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Homeaddress" name="StudentProfileData.Register.Homeaddress" value="P.O. BOX 00,Mombasa 80100">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>County</label><br>
+                                <input type="text" class="form-control" disabled id="StudentProfileData_Register_County" name="StudentProfileData.Register.County" value="MOMBASA">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Domicile</label><br>
+                                <input type="text" class="form-control" disabled id="StudentProfileData_Register_Domicile" name="StudentProfileData.Register.Domicile" value="Domestic Student">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>SubCounty</label><br>
+                                <input type="text" class="form-control" disabled id="StudentProfileData_Register_SubCounty" name="StudentProfileData.Register.SubCounty" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Constituency</label><br>
+                                <input type="text" class="form-control" disabled id="StudentProfileData_Register_Constituency" name="StudentProfileData.Register.Constituency" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-2 d-flex justify-content mt-3">
+                        <button type="submit" class="btn primary-btn btn-md light">Update</button>
+                    </div>
+
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AjNkxAgz6tElXQYWS_mbdyaZt9GMjta4N8JeoriXzoP5x4gCkumI0pUGNe7imoBSRdZZpqNXgbhv19ezQ1B9ieefGAAI2imUDgI_LkA-rJXIyNTUsMKfGJk7YncZnJ23xuBDya6635kHGMNmxvacEViFRAp-Nl53LCLpFElAcSpfr9bn4QES6iMqk-2jE_Xgw" /></form>
+            </div>
+            <div id="Stud-Em-ContactDetails" class="container tab-pane fade" role="tabpanel" aria-labelledby="Stud-Em-ContactDetails-tab">
+                <form method="post" action="/Home/EditStudentProfile?editOperation=EditEmergency">
+                    <div class="row mt-3">
+                        <input hidden type="text" id="StudentProfileData_Register_Telno" name="StudentProfileData.Register.Telno" value="112284093" />
+                        <input hidden type="text" id="StudentProfileData_Register_Email" name="StudentProfileData.Register.Email" value="gadafisteve001@gmail.com" />
+                        <input hidden type="text" id="StudentProfileData_Register_Homeaddress" name="StudentProfileData.Register.Homeaddress" value="P.O. BOX 00,Mombasa 80100" />
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Name</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Emname" name="StudentProfileData.Register.Emname" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Relationship</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Emrel" name="StudentProfileData.Register.Emrel" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Tel No</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Emtel" name="StudentProfileData.Register.Emtel" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Email</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Ememail" name="StudentProfileData.Register.Ememail" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Address</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Emaddress" name="StudentProfileData.Register.Emaddress" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Remarks</label><br>
+                                <input type="text" class="form-control" id="StudentProfileData_Register_Emremarks" name="StudentProfileData.Register.Emremarks" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-2 d-flex justify-content mt-3">
+                        <button type="submit" class="btn primary-btn btn-md light">Update</button>
+                    </div>
+
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AjNkxAgz6tElXQYWS_mbdyaZt9GMjta4N8JeoriXzoP5x4gCkumI0pUGNe7imoBSRdZZpqNXgbhv19ezQ1B9ieefGAAI2imUDgI_LkA-rJXIyNTUsMKfGJk7YncZnJ23xuBDya6635kHGMNmxvacEViFRAp-Nl53LCLpFElAcSpfr9bn4QES6iMqk-2jE_Xgw" /></form>
+            </div>
+            <div id="Academics" class="container tab-pane fade" role="tabpanel" aria-labelledby="Academics-tab">
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Class</label><br>
+                            <input class="form-control" disabled type="text" id="StudEnrollmentData_studEnrolment_Class" name="StudEnrollmentData.studEnrolment.Class" value="SC211/S/22">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Registration Number</label><br>
+                            <input class="form-control" disabled type="text" id="StudEnrollmentData_studEnrolment_AdmnNo" name="StudEnrollmentData.studEnrolment.AdmnNo" value="SC211/0530/2022">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Stay</label><br>
+                            <input class="form-control" disabled type="text" id="StudEnrollmentData_studEnrolment_Stay" name="StudEnrollmentData.studEnrolment.Stay" value="Resident">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Notes</label><br>
+                            <input class="form-control" disabled type="text" id="StudEnrollmentData_studEnrolment_Notes" name="StudEnrollmentData.studEnrolment.Notes" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Personel</label><br>
+                            <input class="form-control" disabled type="text" id="StudEnrollmentData_studEnrolment_Personnel" name="StudEnrollmentData.studEnrolment.Personnel" value="Hopole">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Hostel</label><br>
+                            <input class="form-control" disabled type="text" id="StudEnrollmentData_studEnrolment_Hostel" name="StudEnrollmentData.studEnrolment.Hostel" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Start Date</label><br>
+                            <input type="date" class="form-control" disabled id="StudEnrollmentData_studEnrolment_Sdate" name="StudEnrollmentData.studEnrolment.Sdate" value="2022-08-29">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>End Date</label><br>
+                            <input type="date" class="form-control" disabled id="StudEnrollmentData_studEnrolment_Edate" name="StudEnrollmentData.studEnrolment.Edate" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-3">
+                            <label>Create Date</label><br>
+                            <input type="date" class="form-control" disabled id="StudEnrollmentData_studEnrolment_Rdate" name="StudEnrollmentData.studEnrolment.Rdate" value="2022-08-29">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="EmpContactDetails" class="container tab-pane fade" role="tabpanel" aria-labelledby="EmpContactDetails-tab">
+                <form method="post" action="/Home/EditStaffProfile">
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Telephone number</label><br>
+                                <input type="text" class="form-control" id="StaffProfileData_Cell" name="StaffProfileData.Cell" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Country</label><br>
+                                <input type="text" class="form-control" id="StaffProfileData_Country" name="StaffProfileData.Country" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>Address</label><br>
+                                <input type="text" class="form-control" id="StaffProfileData_Address" name="StaffProfileData.Address" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>City</label><br>
+                                <input type="text" class="form-control" id="StaffProfileData_City" name="StaffProfileData.City" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label>County</label><br>
+                                <input type="text" class="form-control" id="StaffProfileData_County" name="StaffProfileData.County" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-2 d-flex justify-content mt-3">
+                        <button type="submit" class="btn primary-btn btn-md light">Update</button>
+                    </div>
+
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AjNkxAgz6tElXQYWS_mbdyaZt9GMjta4N8JeoriXzoP5x4gCkumI0pUGNe7imoBSRdZZpqNXgbhv19ezQ1B9ieefGAAI2imUDgI_LkA-rJXIyNTUsMKfGJk7YncZnJ23xuBDya6635kHGMNmxvacEViFRAp-Nl53LCLpFElAcSpfr9bn4QES6iMqk-2jE_Xgw" /></form>
+            </div>
+            <div id="Password" class="container tab-pane fade" role="tabpanel" aria-labelledby="Password-tab">
+                <form method="post" action="/Home/ResetPassword">
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="md-form mb-3">
+                                <label>Current Password</label><br>
+                                <input type="password" class="form-control" required id="PasswordReset_OldPassword" name="PasswordReset.OldPassword">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="PasswordReset.OldPassword" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="md-form mb-3">
+                                <label>New Password</label><br>
+                                <input type="password" class="form-control" required data-val="true" data-val-required="The Password field is required." id="PasswordReset_Password" name="PasswordReset.Password">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="PasswordReset.Password" data-valmsg-replace="true"></span>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="md-form mb-3">
+                                <label>Confirm Password</label><br>
+                                <input type="password" class="form-control" required data-val="true" data-val-equalto="Password and confirmation password do not match." data-val-equalto-other="*.Password" data-val-required="The PasswordConfirm field is required." id="PasswordReset_PasswordConfirm" name="PasswordReset.PasswordConfirm">
+                                <span class="text-danger field-validation-valid" data-valmsg-for="PasswordReset.PasswordConfirm" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-2 d-flex justify-content mt-3 ">
+                            <button type="submit" class="btn primary-btn btn-md light  ">Submit</button>
+                        </div>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AjNkxAgz6tElXQYWS_mbdyaZt9GMjta4N8JeoriXzoP5x4gCkumI0pUGNe7imoBSRdZZpqNXgbhv19ezQ1B9ieefGAAI2imUDgI_LkA-rJXIyNTUsMKfGJk7YncZnJ23xuBDya6635kHGMNmxvacEViFRAp-Nl53LCLpFElAcSpfr9bn4QES6iMqk-2jE_Xgw" /></form>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header flex-column">
+                        <div class="icon-box">
+                            <i class="material-icons">&#xE5CD;</i>
+                        </div>
+                        <h4 class="modal-title fw-bold text-dark">Are you sure?</h4>
+                    </div>
+                    <div class="modal-body text-dark ms-2 text-center">
+                        <p class="text-dark px-4" style="width: 26rem;">Do you really want to delete these record? This process cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-lg btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-lg btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- UploadFile -->
+        <div class="modal fade" id="UploadFile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title primary-text" id="exampleModalLabel">Upload Files</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" enctype="multipart/form-data" action="/Repository/UploadFile">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label small">Select Folder</label>
+                                <select class="form-select" required name="folder">
+                                    <option value="">Select folder</option>
+                                        <option value="4">ATTACHEMENT</option>
+                                        <option value="5">STUDENT NOTICES</option>
+                                        <option value="9">STUDENT FORMS</option>
+                                        <option value="10">TVET ATTACHMENT FORMS</option>
+                                        <option value="20">STUDENT  ELECTIONS 2023</option>
+                                        <option value="22">ACCOMODATION</option>
+                                        <option value="26">TEACHING TIMETABLES</option>
+                                        <option value="27">PROGRAMMES ADVERTS</option>
+                                        <option value="29">POSTGRADUATE FORMS</option>
+                                        <option value="30">EXAMINATION TIMETABLES</option>
+                                        <option value="33">COURSE TRANSFER</option>
+                                        <option value="35">PAST EXAMINATION PAPERS</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label small">Choose File</label>
+                                <input type="file" class="form-control" name="file" id="exampleFormControlInput1" required>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-8"></div>
+                                <div class="col-md-4 d-flex justify-content-end">
+                                    <button class="btn primary-btn ms-2 btn-lg" type="submit">Save</button>
+                                </div>
+                            </div>
+
+                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8AjNkxAgz6tElXQYWS_mbdyaZt9GMjta4N8JeoriXzoP5x4gCkumI0pUGNe7imoBSRdZZpqNXgbhv19ezQ1B9ieefGAAI2imUDgI_LkA-rJXIyNTUsMKfGJk7YncZnJ23xuBDya6635kHGMNmxvacEViFRAp-Nl53LCLpFElAcSpfr9bn4QES6iMqk-2jE_Xgw" /></form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="{% static 'bs5-intro-tour.js'%}"></script>
+     
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.3.0/dist/qr-code-styling.umd.min.js"></script>
+    
+    <!-- QRCode.js CDN -->
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+    <!-- jQuery CDN -->
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+            integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <script src="https://jiunge.com/widget/jiunge-widget.js"></script>
+  
+    <script src="{% static 'main.js'%}"></script>
+    <script src="{% static 'site.js'%}"></script>
+    <script src="{% static 'Tour.js'%}"></script>
+    <script src="{% static 'chat-script.js'%}"></script>
+    <script src="{% static 'settings.js'%}"></script>
+    <script src="{% static 'customtepper.js'%}"></script>
+    <script src="{% static 'loader.js'%}"></script>
+    
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const deleteConfirm = e => {
+         
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-danger me-2',
+                cancelButton: 'btn primary-outline-btn me-2'
+            },
+            buttonsStyling: false
+        })
+        swalWithBootstrapButtons.fire({
+            title: 'Are you sure ?',
+            html: "Do you really want to delete these record? <br/> This process cannot be undone",
+            icon: 'error',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Delete',
+            reverseButtons :true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success',
+                    '2000'
+                )
+                setTimeout(() => $("form").submit(),1000)
+                
+            }
+        })
+    }
+</script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                dom: '<"row"<"col-md-12"f>><"row mt-2"<"col-md-12"rt>><"row d-flex align-items-center bottom mt-3"<"col-md-6 d-flex align-items-center len-info"li><"col-md-6"p>>'
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- register_units.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Units</title>
+</head>
+<body>
+    <h2>Register Units</h2>
+    <form method="post">
+        {% csrf_token %}
+        <ul>
+            {% for unit in units %}
+                <li>
+                    <input type="checkbox" name="units" value="{{ unit.id }}" id="unit_{{ unit.id }}">
+                    <label for="unit_{{ unit.id }}">{{ unit.name }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
